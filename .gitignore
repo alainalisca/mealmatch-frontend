@@ -1,14 +1,10 @@
-# Dependencies
-   node_modules/
+# dependencies
+/node_modules
 
-   # Environment variables
-   .env
-   *.env
+# production
+/.next
+/out
 
-   # OS files
-   .DS_Store
-   
-   # Next.js
-   .next/
-   out/
-node_modules
+# misc
+.env
+.DS_Store

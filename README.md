@@ -1,40 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# MealMatch - Fitness Meal Companion Application
 
-## Getting Started
+A full-stack web application connecting fitness enthusiasts with local cooks for healthy, macro-friendly meals. Built as a companion to the Tribe - Sport & Fitness App that is currently available for download on the Apple App Store and the Google Play Store.
 
-First, run the development server:
+## Project Overview
 
+MealMatch allows users to discover local verified cooks, browse nutritious recipes tailored to fitness goals, and manage meal orders - all with detailed nutritional information to support their fitness journey.
+
+## Tech Stack
+
+### Backend
+- **Node.js** with Express.js
+- **MongoDB** with Mongoose ODM
+- **JWT Authentication** for secure user sessions
+- **Express-validator** for input validation
+- RESTful API architecture
+
+### Frontend
+- **Next.js** (Pages Router) with TypeScript
+- **React** for UI components
+- **Tailwind CSS** for styling
+- **Axios** for API calls
+- Responsive design
+
+## Features Implemented
+
+### Authentication
+- ✅ User registration with validation
+- ✅ Secure login with JWT tokens
+- ✅ Protected routes with auth middleware
+- ✅ User profile management
+
+### Core Functionality
+- ✅ Browse local verified cooks with ratings and specialties
+- ✅ View available recipes with detailed nutritional information
+- ✅ Filter recipes by dietary tags (vegan, gluten-free, keto, etc.)
+- ✅ View cook ratings, prep times, and order history
+- ✅ User order history tracking
+
+## API Endpoints
+
+### Authentication Routes (`/api/auth`)
+- `POST /register` - Register new user
+- `POST /login` - User login
+- `GET /me` - Get current user profile (protected)
+
+### Cooks Routes (`/api/cooks`)
+- `GET /nearby` - Get nearby local cooks
+
+### Recipes Routes (`/api/recipes`)
+- `GET /` - Get all available recipes
+
+### Orders Routes (`/api/orders`)
+- `GET /user` - Get user's orders (protected)
+
+## Database Models
+
+- **User** - User accounts with location and preferences
+- **Cook** - Local cook profiles with business info and ratings
+- **Recipe** - Meal recipes with nutrition data and pricing
+- **Order** - User order history and status
+
+## Setup Instructions
+
+### Backend Setup
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+cd backend
+npm install
+# Create .env file with:
+# MONGODB_URI=your_mongodb_connection_string
+# JWT_SECRET=your_secret_key
+# JWT_EXPIRES_IN=7d
+npm start
+# Server runs on http://localhost:4000

@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 // Use production URL by default, fallback to localhost for development
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://mealmatch-capstone.onrender.com/api';
+//const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://mealmatch-capstone.onrender.com/api';
+const API_BASE_URL = 'https://mealmatch-capstone.onrender.com/api';
+
 
 const api = axios.create({
   baseURL: API_BASE_URL,
